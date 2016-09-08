@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import java.net.URL ?>
+<BorderPane fx:controller="cz.inited.ui.graphics.controllers.MainController"
+			xmlns:fx="http://javafx.com/fxml">
+	<stylesheets>
+		<URL value="@css/style.css"/>
+	</stylesheets>
+	<top>
+		<MenuBar>
+			<Menu text="Soubor">
+				<Menu text="Nový">
+					<Menu text="Cordova" disable="true">
+						<MenuItem text="Controller"/>
+						<MenuItem text="Service"/>
+						<MenuItem text="Šablona"/>
+					</Menu>
+				</Menu>
+				<MenuItem text="Konec"/>
+			</Menu>
+			<Menu text="Projekt">
+				<Menu text="Nový">
+					<MenuItem text="Cordova" onAction="#handleCreateCordova"/>
+				</Menu>
+				<MenuItem text="Otevřít" onAction="#handleOpenProject"/>
+			</Menu>
+		</MenuBar>
+	</top>
+	<center>
+		<BorderPane>
+			<top><Text fx:id="projectName" text="Žádný projekt není otevřen"/></top>
+			<left>
+				<VBox>
+				</VBox>
+			</left>
+			<center>
+
+			</center>
+			<right>
+				<VBox fx:id="scriptsBox"/>
+			</right>
+		</BorderPane>
+	</center>
+	<bottom>
+		<TextArea fx:id="logArea" editable="false" styleClass="logArea" />
+	</bottom>
+</BorderPane>
